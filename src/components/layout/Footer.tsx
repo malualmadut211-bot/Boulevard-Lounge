@@ -10,7 +10,7 @@ export function Footer() {
   const [email, setEmail] = useState("");
 
   return (
-    <footer ref={ref} className="relative bg-gradient-dark text-white noise-overlay overflow-hidden">
+    <footer ref={ref} className="relative bg-surface-dark text-white noise-overlay overflow-hidden">
       {/* Newsletter Strip */}
       <div className="relative z-10 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

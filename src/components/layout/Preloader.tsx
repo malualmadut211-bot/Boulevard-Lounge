@@ -31,88 +31,46 @@ export function Preloader() {
         <>
           {/* Left Curtain */}
           <motion.div
-            className="fixed inset-0 w-1/2 left-0 bg-surface-cream z-[10000]"
+            className="fixed inset-0 w-1/2 left-0 bg-surface-dark z-[10000]"
             initial={{ x: 0 }}
             exit={{ x: "-100%" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
           />
           {/* Right Curtain */}
           <motion.div
-            className="fixed inset-0 w-1/2 right-0 left-auto bg-surface-cream z-[10000]"
+            className="fixed inset-0 w-1/2 right-0 left-auto bg-surface-dark z-[10000]"
             initial={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
           />
           {/* Logo in center */}
           <motion.div
-            className="fixed inset-0 z-[10001] flex items-center justify-center"
+            className="fixed inset-0 z-[10001] flex items-center justify-center pointer-events-none"
             exit={{ opacity: 0, scale: 1.1 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.6 }}
           >
-            <div className="text-center">
-              {/* Logo SVG with stroke animation */}
-              <motion.svg
-                width="280"
-                height="80"
-                viewBox="0 0 280 80"
-                className="mx-auto mb-4"
-              >
-                <motion.text
-                  x="50%"
-                  y="45"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  className="font-playfair"
-                  fontSize="36"
-                  fontWeight="700"
-                  fill="none"
-                  stroke="#974A02"
-                  strokeWidth="1.5"
-                  initial={{ strokeDasharray: 800, strokeDashoffset: 800 }}
-                  animate={{
-                    strokeDashoffset: 0,
-                    fill: "#974A02",
-                    transition: {
-                      strokeDashoffset: { duration: 2, ease: "easeInOut" },
-                      fill: { duration: 0.8, delay: 1.8 },
-                    },
-                  }}
-                >
-                  BOULEVARD
-                </motion.text>
-                <motion.text
-                  x="50%"
-                  y="70"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  className="font-montserrat"
-                  fontSize="11"
-                  fontWeight="600"
-                  letterSpacing="6"
-                  fill="none"
-                  stroke="#974A02"
-                  strokeWidth="0.8"
-                  initial={{ strokeDasharray: 500, strokeDashoffset: 500 }}
-                  animate={{
-                    strokeDashoffset: 0,
-                    fill: "#8E4500",
-                    transition: {
-                      strokeDashoffset: { duration: 1.5, delay: 0.5, ease: "easeInOut" },
-                      fill: { duration: 0.8, delay: 2 },
-                    },
-                  }}
-                >
-                  LOUNGE BAR & GRILL
-                </motion.text>
-              </motion.svg>
+            <div className="text-center flex flex-col items-center">
+              <motion.img
+                src="https://github.com/malualmadut211-bot/ai-studio-media/blob/8390a8ab3d9e0a4a84077fdd236638ad49075aca/ChatGPT%20Image%20Apr%202%2C%202026%2C%2012_22_51%20PM.png?raw=true"
+                alt="Boulevard Logo"
+                className="w-48 md:w-64 mb-8 object-contain"
+                initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
+                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+              />
 
               {/* Loading bar */}
-              <motion.div className="w-48 h-[2px] bg-border-light mx-auto rounded-full overflow-hidden">
+              <motion.div 
+                className="w-48 h-[2px] bg-white/10 mx-auto rounded-full overflow-hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+              >
                 <motion.div
-                  className="h-full bg-brand-brown rounded-full"
+                  className="h-full bg-brand-gold rounded-full"
                   initial={{ width: "0%" }}
                   animate={{ width: "100%" }}
-                  transition={{ duration: 3, ease: "easeInOut" }}
+                  transition={{ duration: 2.5, ease: "easeInOut" }}
                 />
               </motion.div>
 

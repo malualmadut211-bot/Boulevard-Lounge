@@ -40,8 +40,15 @@ const overlayVariants = {
 export function PageTransitionProvider({ children }: { children: ReactNode }) {
   const location = useLocation();
 
+  const handleExitComplete = () => {
+    window.scrollTo(0, 0);
+    if ((window as any).__lenis) {
+      (window as any).__lenis.scrollTo(0, { immediate: true });
+    }
+  };
+
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
       <motion.div key={location.pathname}>
         <motion.div
           className="fixed inset-0 bg-surface-cream z-[9999] origin-left pointer-events-none"
